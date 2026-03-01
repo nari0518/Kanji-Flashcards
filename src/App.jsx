@@ -251,8 +251,12 @@ const App = () => {
                 incorrect: prev.incorrect + 1,
                 mistakes: [...prev.mistakes, { ...currentItem, userAnswer: input }]
             }));
+            setUserInput(''); // Clear input on wrong answer to prevent freeze feeling
             setIsAnimating(true);
-            setTimeout(() => setIsAnimating(false), 500);
+            setTimeout(() => {
+                setIsAnimating(false);
+                inputRef.current?.focus(); // Refocus after animation
+            }, 500);
         }
     };
 
@@ -278,6 +282,7 @@ const App = () => {
             setUserInput('');
             setFeedback({ type: '', message: '' });
             setShowAnswer(false);
+            setTimeout(() => inputRef.current?.focus(), 50); // Auto-focus on next question
         } else {
             setView('result');
         }
