@@ -1,0 +1,9 @@
+{
+    "sets": [
+        {
+            "id": "sample-kanji",
+            "name": "サンプル漢字",
+            "filename": "sample.csv"
+        }
+    ]
+}
