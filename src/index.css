@@ -319,15 +319,16 @@ body {
   height: clamp(250px, 40vh, 420px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: clamp(0.6rem, 1.5vw, 1rem);
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
   position: relative;
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
   max-width: 1000px;
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .sentence-text {
