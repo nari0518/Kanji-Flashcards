@@ -311,12 +311,15 @@ body {
 
 .flashcard {
   background: linear-gradient(145deg, #1f2937, #111827);
+  /* 固定幅を指定して内容に左右されないように */
+  width: clamp(300px, 40vw, 600px);
+  /* 高さも一定範囲内におさめる */
+  height: clamp(300px, 40vh, 500px);
   padding: clamp(1rem, 2vw, 1.5rem) clamp(0.8rem, 2vw, 1.5rem);
   border-radius: 2.5rem;
   border: 2px solid var(--glass-border);
   text-align: center;
   margin-bottom: 2.5rem;
-  height: clamp(250px, 40vh, 420px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -326,9 +329,12 @@ body {
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
   overflow-y: auto;
   overflow-x: hidden;
-  width: 100%;
-  max-width: 1000px;
   padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* プログレスバーは常にビュー幅に対して100% */
+.quiz-header .progress-bar-container {
+  max-width: 100%;
 }
 
 .sentence-text {
